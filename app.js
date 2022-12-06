@@ -25,6 +25,7 @@ var passpt = require('./config/passport');
 */
 var indexRouter = require('./routes/index');
 var apiRouter = require("./routes/api");
+var userRouter = require("./routes/users");
 
 
 
@@ -33,6 +34,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
 app.set('view engine', 'pug');
 
 
@@ -43,12 +45,14 @@ app.set('view engine', 'pug');
 
 app.use(cors({credentials: true}))
 app.use(helmet());
-app.use(compression({level:9})) // Organizar isso.
+app.use(compression({level:2})) // Organizar isso.
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
+
 
 
 app.use(cookieSession({
@@ -61,7 +65,9 @@ app.use(cookieSession({
 app.use(passpt.initialize());
 app.use(passpt.session());
 
+
 app.use('/', indexRouter);
+app.use('/user', userRouter);
 app.use('/api', apiRouter);
 // app.use('/users', usersRouter);
 
