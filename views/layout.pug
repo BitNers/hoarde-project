@@ -1,0 +1,41 @@
+- var currentYear = new Date().getFullYear()
+
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="bootstrap/dist/css/bootstrap.min.css")
+    script(src="bootstrap/dist/js/bootstrap.bundle.min.js")
+  body
+    nav.navbar.navbar-expand-lg(style="background-color: #d9d2e9;")
+      a.navbar-brand(href="/" style="padding-left: 0.7rem") #{title}
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent")
+        span.navbar-toggler-icon
+
+      div.collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav.mr-auto 
+          li.nav-item.active 
+            a.nav-link(href="#") Link 1
+          li.nav-item
+            a.nav-link(href="#") Link 2
+    
+    
+    block content
+
+
+    div.container-fluid(style="background-color: #d9d2e9; position:absolute; bottom:0; width:100%;" ) 
+      footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-6
+        p.col-md-4.mb-0.text-muted &copy; #{currentYear} #{title}
+
+        //a.col-md-4.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.me-md-auto.link-dark.text-decoration-none
+        //   span Hoarde
+
+        ul.nav.col-md-6.justify-content-end
+          li.nav-item
+            a.nav-link.px-2.text-muted(href="#") Home
+          li.nav-item
+            a.nav-link.px-2.text-muted(href="#") About
+          li.nav-item
+            a.nav-link.px-2.text-muted(href="#") FAQ
+          li.nav-item
+            a.nav-link.px-2.text-muted(href="#") Pricing
