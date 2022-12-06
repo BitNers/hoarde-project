@@ -1,0 +1,18 @@
+#form-signin {
+    min-width: 450px;
+    max-width: 600px;
+    padding: 3rem;
+    background-color:  #d9d2e9;
+    border-radius: 2rem;
+    box-shadow: 13px 13px 21px 10px rgba(0,0,0,0.75);
+}
+
+#form-signin > * {
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+#form-options {
+    justify-content: space-evenly;   
+}
