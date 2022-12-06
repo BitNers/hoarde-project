@@ -1,5 +1,6 @@
 - var currentYear = new Date().getFullYear()
 
+
 doctype html
 html
   head
@@ -7,17 +8,27 @@ html
     link(rel="stylesheet", href="bootstrap/dist/css/bootstrap.min.css")
     script(src="bootstrap/dist/js/bootstrap.bundle.min.js")
   body
+
     nav.navbar.navbar-expand-lg(style="background-color: #d9d2e9;")
       a.navbar-brand(href="/" style="padding-left: 0.7rem") #{title}
       button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent")
         span.navbar-toggler-icon
 
       div.collapse.navbar-collapse#navbarSupportedContent
-        ul.navbar-nav.mr-auto 
-          li.nav-item.active 
-            a.nav-link(href="#") Link 1
-          li.nav-item
-            a.nav-link(href="#") Link 2
+        ul.navbar-nav.mr-auto
+          if loggedIn == false
+            li.nav-item.active 
+              a.nav-link(href="/login") Login
+            li.nav-item
+              a.nav-link(href="/register") Register
+          else
+            li.nav-item.active 
+              a.nav-link(href="/user") Dashboard
+            li.nav-item.active 
+              a.nav-link(href="/user/bunker") Bunker
+            li.nav-item.active 
+              a.nav-link(href="/user/logout") Logout
+          
     
     
     block content
