@@ -44,6 +44,11 @@ module.exports = (sequelize)=>{
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+
+        ID_Bunker: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
        
         Password: {
             type: DataTypes.STRING,
