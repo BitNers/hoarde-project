@@ -6,7 +6,7 @@ require('dotenv');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: process.env.APP_NAME });
+  res.render('index', { title: process.env.APP_NAME, loggedIn: req.isAuthenticated()} );
 });
 
 router.get('/login', function(req, res, next) {

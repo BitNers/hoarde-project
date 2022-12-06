@@ -18,7 +18,7 @@ router.get('/dashboard', function (req,res,next){
 );
 
 
-router.post('/logout', function(req,res,next){
+router.get('/logout', function(req,res,next){
   req.logout();
   res.redirect("/");
 })
